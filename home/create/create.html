@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>问卷编辑页面</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="create.css">
+    <title>创建问卷</title>
+    <link rel="stylesheet" href="create.css">
 </head>
 <body>
-<div class="header">
-    <input type="text" id="title" placeholder="输入问卷标题">
+<div id="header">
+    <h1 id="title-input" contenteditable="true">请输入标题</h1>
 </div>
-<div class="container">
-    <div class="question">
-        <div class="question-header">
-            <span class="question-number">1.</span>
-            <input type="text" class="question-title" placeholder="输入问题标题">
-            <button class="delete-question">删除</button>
-            <button class="duplicate-question">复用</button>
-            <button class="move-up">上移</button>
-            <button class="move-down">下移</button>
-        </div>
-        <div class="question-body">
-            <div class="question-type">
-                <label><input type="radio" name="question-type" value="single-choice">单选题</label>
-                <label><input type="radio" name="question-type" value="multiple-choice">多选题</label>
-                <label><input type="radio" name="question-type" value="text">文本题</label>
-            </div>
-            <div class="options">
-                <div class="option">
-                    <input type="text" class="option-title" placeholder="选项标题">
-                    <button class="delete-option">删除</button>
-                    <button class="move-up-option">上移</button>
-                    <button class="move-down-option">下移</button>
+<div id="content">
+    <h2>问题列表</h2>
+    <div id="question-list">
+        <div class="question" id="question-template">
+            <div class="question-header">
+                <div class="question-type">
+                    <label>问题类型:</label>
+                    <select class="type-select">
+                        <option value="single">单选题</option>
+                        <option value="multi">多选题</option>
+                        <option value="text">单行文本题</option>
+                    </select>
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="up-button">上移</button>
+                    <button type="button" class="down-button" >下移</button>
+                    <button type="button" class="copy-button">复用</button>
+                    <button type="button" class="delete-button">删除</button>
                 </div>
             </div>
-            <div class="add-option">
-                <button class="add-option-button">添加选项</button>
-            </div>
-            <div class="text-question-options">
-                <label><input type="checkbox" class="required">必填</label>
+            <div class="question-body">
+                <label>问题内容:</label>
+                <input type="text" class="question-content">
+                <div class="options">
+                    <div class="option" id="option-template">
+                        <input type="text" class="option-content">
+                        <button type="button" class="add-question-button">+</button>
+                        <button type="button" class="delete-option-button">-</button>
+                    </div>
+                </div>
+                <div class="text-options">
+                    <label>是否必填:</label>
+                    <input type="checkbox" class="required-checkbox">
+                </div>
             </div>
         </div>
     </div>
-    <div class="add-question">
-        <button class="add-question-button">添加问题</button>
-    </div>
+    <button type="button" id="add-question-btn">新增问题</button>
 </div>
-<script src="script.js"></script>
+<div id="footer">
+    <label>截止日期:</label>
+    <input type="date" id="deadline">
+    <button type="button" id="save-btn">保存问卷</button>
+    <button type="button" id="publish-btn">发布问卷</button>
+</div>
+<script src="./create.js"></script>
 </body>
 </html>
