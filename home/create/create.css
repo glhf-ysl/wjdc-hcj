@@ -1,0 +1,93 @@
+.container {
+    padding: 20px;
+}
+
+.question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.question-number {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.question-title {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.question-type {
+    margin-bottom: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.option-title {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.add-option {
+    margin-bottom: 10px;
+}
+
+.text-question-options {
+    margin-top: 10px;
+}
+
+.delete-option {
+    margin-left: 10px;
+}
+
+.move-up-option,
+.move-down-option {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.add-option-button {
+    background-color: #ccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-question-button {
+    background-color: #ccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-question,
+.duplicate-question,
+.move-up,
+.move-down {
+    background-color: #ccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.delete-question {
+    margin-right: 10px;
+}

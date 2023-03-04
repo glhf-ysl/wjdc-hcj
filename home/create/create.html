@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>问卷编辑页面</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="create.css">
+</head>
+<body>
+<div class="header">
+    <input type="text" id="title" placeholder="输入问卷标题">
+</div>
+<div class="container">
+    <div class="question">
+        <div class="question-header">
+            <span class="question-number">1.</span>
+            <input type="text" class="question-title" placeholder="输入问题标题">
+            <button class="delete-question">删除</button>
+            <button class="duplicate-question">复用</button>
+            <button class="move-up">上移</button>
+            <button class="move-down">下移</button>
+        </div>
+        <div class="question-body">
+            <div class="question-type">
+                <label><input type="radio" name="question-type" value="single-choice">单选题</label>
+                <label><input type="radio" name="question-type" value="multiple-choice">多选题</label>
+                <label><input type="radio" name="question-type" value="text">文本题</label>
+            </div>
+            <div class="options">
+                <div class="option">
+                    <input type="text" class="option-title" placeholder="选项标题">
+                    <button class="delete-option">删除</button>
+                    <button class="move-up-option">上移</button>
+                    <button class="move-down-option">下移</button>
+                </div>
+            </div>
+            <div class="add-option">
+                <button class="add-option-button">添加选项</button>
+            </div>
+            <div class="text-question-options">
+                <label><input type="checkbox" class="required">必填</label>
+            </div>
+        </div>
+    </div>
+    <div class="add-question">
+        <button class="add-question-button">添加问题</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
