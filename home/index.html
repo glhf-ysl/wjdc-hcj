@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>问卷列表</title>
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>问卷列表</h1>
+
+<!-- 新建问卷按钮 -->
+<div>
+    <button type="button" onclick="window.location.href='./create.html'">新建问卷</button>
+    <button id="batch-delete-button">批量删除</button>
+
+</div>
+
+<!-- 表格展示已创建的问卷 -->
+<table id="surveyTable">
+    <thead>
+    <tr>
+        <th><input type="checkbox" id="selectAll">全选</th>
+        <th>问卷标题</th>
+        <th>创建时间</th>
+        <th>问卷状态</th>
+        <th>操作区域</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" class="selectCheckbox"></td>
+        <td>问卷标题1</td>
+        <td>2022-01-01</td>
+        <td>未发布</td>
+        <td>
+            <button type="button">编辑</button>
+            <button type="button">删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="selectCheckbox"></td>
+        <td>问卷标题2</td>
+        <td>2022-02-01</td>
+        <td>发布中</td>
+        <td>
+            <button type="button">填写问卷</button>
+            <button type="button">查看数据</button>
+            <button type="button">删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="selectCheckbox"></td>
+        <td>问卷标题3</td>
+        <td>2022-03-01</td>
+        <td>已结束</td>
+        <td>
+            <button type="button">查看数据</button>
+            <button type="button">删除</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- 引入外部JS文件 -->
+<script src="script.js"></script>
+
+</body>
+</html>
