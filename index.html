@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8"> <!--设置文档字符编码为UTF-8-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--指定浏览器的兼容性模式-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--设置视口宽度和初始缩放值-->
+    <title>注册表单</title> <!--设置文档标题-->
+    <link rel="stylesheet" type="text/css" href="index.css" /> <!--引入外部样式表-->
 </head>
 <body>
-<div>
-    <header>
-        <h1>广师大咖啡馆</h1>
-        <p>Since 2022</p>
-    </header>
-    <hr>
-    <main>
-        <section>
-            <h2>咖啡</h2>
-            <img src="https://labfile.oss.aliyuncs.com/courses/10535/coffee.jpg">
-            <article >
-                <p class="coffee">法国⾹草味</p><p class="price">¥ 3.00</p>
-            </article>
-            <article >
-                <p class="coffee">焦糖玛奇朵味</p><p class="price">¥ 3.75</p>
-            </article>
-            <article >
-                <p class="coffee">南⽠⾹料味</p><p class="price">¥ 3.50</p>
-            </article>
-            <article >
-                <p class="coffee">榛⼦味</p><p class="price">¥ 4.00</p>
-            </article>
-            <article >
-                <p class="coffee">摩卡味</p><p class="price">¥ 4.50</p>
-            </article>
-        </section>
-        <section>
-            <h2>甜点</h2>
-            <img src="https://labfile.oss.aliyuncs.com/courses/10535/pie.jpg">
-            <article >
-                <p class="sweat">甜甜圈</p><p class="price">¥ 1.50</p>
-            </article>
-            <article >
-                <p class="sweat">樱桃馅饼</p><p class="price">¥ 2.75</p>
-            </article>
-            <article >
-                <p class="sweat">奶酪蛋糕</p><p class="price">¥ 3.00</p>
-            </article>
-            <article >
-                <p class="sweat">⾁桂卷</p><p class="price">¥ 2.50</p>
-            </article>
-        </section>
-    </main>
-    <hr>
-    <footer>
-        <a href=""><p>访问我们的⽹站</p></a>
-        <p>⼴东技术师范⼤学</p>
-    </footer>
-</div>
+<header>
+    <h1>注册表单</h1> <!--设置标题-->
+    <h6>请填写下面表单中所要求的信息</h6>
+</header>
+<main>
+    <form> <!--创建表单-->
+        <fieldset> <!--创建表单区域-->
+            <p>输入您的姓名：</p>
+            <input type="text" name="name" value="Name"> <!--创建文本框-->
+            <p>输入您的邮箱：</p>
+            <input type="text" name="email" value="Email"> <!--创建文本框-->
+            <p>创建您的密码：</p>
+            <input type="text" name="password" value="Password"> <!--创建文本框-->
+        </fieldset>
+        <fieldset> <!--创建表单区域-->
+            <input class="choose" type="radio" checked="checked" name="个人类型" id="个人类型" value="个人" /> <!--创建单选框-->
+            <label for="个人类型">个人账号</label> <!--创建标签-->
+            <br />
+            <input class="choose" type="radio" name="个人类型" id="企业类型" value="企业" /> <!--创建单选框-->
+            <label for="企业类型">企业账号</label> <!--创建标签-->
+            <br />
+            <input class="choose" type="checkbox" name="协议" id="协议"> <!--创建复选框-->
+            <label for="协议">我接受此链接中的<a href="">术语与条款</a></label> <!--创建标签-->
+        </fieldset>
+        <fieldset> <!--创建表单区域-->
+            <input type="file" name="file"> <!--创建文件上传框-->
+            <p>输入您的年龄：</p>
+            <input  type="text" name="age" id="age" value="Age"> <!--创建文本框-->
+            <p>您是从何种途径知悉我们的</p> <!--添加注释-->
+            <select> <!--创建下拉列表-->
+                <option>（请选择）</option> <!--创建选项-->
+                <option>新闻</option>
+                <option>视频</option>
+                <option>论坛</option>
+                <option>其他</option>
+            </select>
+            <p>您对自己的简要描述</p>
+            <textarea>简要介绍您自己...</textarea>
+        </fieldset>
+
+        <input class="button" type="submit" value="提交">
+
+    </form>
+</main>
 </body>
 </html>
