@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>问卷管理</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>问卷管理</h1>
+      </div>
+      <div class="main">
+        <div class="toolbar">
+          <a href="./newSurvey.html" class="btn btn-primary">新建问卷</a>
+          <button id="delete-survey-btn">删除问卷</button>
+        </div>
+        <table id="survey-list">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="check-all" /></th>
+              <th>问卷标题</th>
+              <th>创建时间</th>
+              <th>问卷状态</th>
+              <th>操作区域</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div class="empty-message">
+          <h2>暂无问卷</h2>
+          <button id="new-survey-btn-empty">新建问卷</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/surveyList.js"></script>
+  </body>
+</html>

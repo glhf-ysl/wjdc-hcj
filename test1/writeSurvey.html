@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填写问卷</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>请填写问卷</h1>
+    <form id="survey-form">
+        <!-- 用 JavaScript 动态生成表单内容 -->
+    </form>
+    <button id="submit-btn">提交问卷</button>
+    <script>
+        // 从 localStorage 中获取当前需要填写的问卷数据
+        var surveyData = JSON.parse(localStorage.getItem('currentSurvey'));
+
+        // 动态生成表单内容
+        var formHtml = '';
+        for (var i = 0; i < surveyData.questions.length; i++) {
+            var question = surveyData.questions[i];
+            formHtml += '<div>';
+            formHtml += '<p>' + question.title + '</p>';
+            if (question.type === 'single') {
+                for (var j = 0; j < question.options.length; j++) {
+                    var option = question.options[j];
+                    formHtml += '<input type="radio" name="question-' + i + '" value="' + option + '">';
+                    formHtml += '<label>' + option + '</label>';
+                }
+            } else if (question.type === 'multiple') {
+                for (var j = 0; j < question.options.length; j++) {
+                    var option = question.options[j];
+                    formHtml += '<input type="checkbox" name="question-' + i + '" value="' + option + '">';
+                    formHtml += '<label>' + option + '</label>';
+                }
+            } else if (question.type === 'text') {
+                formHtml += '<input type="text" name="question-' + i + '">';
+            }
+            formHtml += '</div>';
+        }
+        $('#survey-form').html(formHtml);
+
+        // 监听提交按钮的点击事件，获取用户填写的问卷数据
+        $('#submit-btn').click(function() {
+            var formData = $('#survey-form').serializeArray();
+            var answerData = {};
+            for (var i = 0; i < formData.length; i++) {
+                var name = formData[i].name;
+                var value = formData[i].value;
+                answerData[name] = value;
+            }
+            // 将用户填写的问卷数据保存到 localStorage 中
+            localStorage.setItem('currentAnswer', JSON.stringify(answerData));
+            alert('提交成功！');
+        });
+    </script>
+</body>
+</html>
