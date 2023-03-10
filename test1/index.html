@@ -19,12 +19,16 @@
         </div>
         <table id="survey-list">
           <thead>
-            <tr>
-              <th><input type="checkbox" id="check-all" /></th>
-              <th>问卷标题</th>
-              <th>创建时间</th>
-              <th>问卷状态</th>
-              <th>操作区域</th>
+            <tr v-for="(survey, index) in surveys" :key="survey.id">
+                <td>{{survey.title}}</td>
+                <td>{{survey.createdTime}}</td>
+                <td>{{survey.status}}</td>
+                <td>
+                  <button @click="editSurvey(index)">编辑</button>
+                  <button @click="deleteSurvey(index)">删除</button>
+                  <a href="fillSurvey.html?id=1">填写问卷</a>
+                  <button @click="viewSurveyData(index)">查看数据</button>
+                </td>
             </tr>
           </thead>
           <tbody>

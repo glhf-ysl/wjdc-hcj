@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>问卷调查 - 查看数据</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>查看数据</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div v-for="(question, index) in survey.questions" :key="index">
+          <h3>{{question.title}}</h3>
+          <div v-if="question.type === 'single-choice' || question.type === 'multi-choice'">
+            <div v-for="(option, index) in question.options" :key="index">
+              <p>{{option.label}}</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" :style="{width: optionCount(option, question.responses) + '%'}" :aria-valuenow="optionCount(option, question.responses)" aria-valuemin="0" aria-valuemax="100">{{optionCount(option, question.responses)}}%</div>
+              </div>
+            </div>
+          </div>
+          <div v-else-if="question.type === 'text'">
+            <ul>
+              <li v-for="(response, index) in question.responses" :key="index">{{response}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="surveyList.js"></script>
+  <script src="viewSurveyData.js"></script>
+</body>
+</html>
